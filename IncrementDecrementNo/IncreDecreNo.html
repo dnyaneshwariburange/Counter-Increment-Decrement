@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment, Decrement, and Reset Counter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f4;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: #a8d0de;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #050303;
+            margin-bottom: 10px;
+        }
+
+        #count {
+            font-size: 2em;
+            margin: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            font-size: 1.5em;
+            padding: 10px 30px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #060d15; /* Default color */
+            color: rgb(235, 242, 248);
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        button:active {
+            background-color: #99aec4; 
+            transform: scale(0.95); 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Increment, Decrement, and Reset Counter</h1>
+        <h3 id="count">0</h3>
+        <div class="button-container">
+            <button id="inc">+</button>
+            <button id="dec">-</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+    <script>
+        let count = document.getElementById('count');
+        let inc = document.getElementById('inc');
+        let dec = document.getElementById('dec');
+        let reset = document.getElementById('reset');
+        let c = 0;
+
+        function updateCount(newCount) {
+            c = newCount;
+            count.innerText = c;
+        }
+
+        inc.addEventListener('click', () => updateCount(c + 1));
+        dec.addEventListener('click', () => updateCount(c - 1));
+        reset.addEventListener('click', () => updateCount(0));
+    </script>
+</body>
+
+</html>
